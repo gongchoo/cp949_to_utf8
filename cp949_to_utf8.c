@@ -2704,7 +2704,7 @@ static  const   ub2 unicode_tbl[ 17048 ] =
     0xd72b, 0x8c79, 0xb3ca, 0xb3e1, 0x3381, 0x8118, 0x6c99, 0xb3ee,
 };
 
-static  ub2 cp949_t0_unicode( const cp2* cp949 )
+static  ub2 cp949_to_unicode( const cp2* cp949 )
 {
     ub4 a;
     ub4 b;
@@ -3092,7 +3092,7 @@ unsigned    cp949_to_utf8_len( const char* src_str )
             else    if( is_cp949( &cp949 ) != 0 )
             {
                 index_utf8 +=
-                    unicode_to_utf8( 0x0, cp949_t0_unicode( &cp949 ) );
+                    unicode_to_utf8( 0x0, cp949_to_unicode( &cp949 ) );
             }
             else
             {
@@ -3145,7 +3145,7 @@ char*   cp949_to_utf8( char* dst_str, const char* src_str )
             {
                 index_utf8 +=
                     unicode_to_utf8( &( utf8[ index_utf8 ] ),
-                                     cp949_t0_unicode( &cp949 ) );
+                                     cp949_to_unicode( &cp949 ) );
             }
             else
             {
