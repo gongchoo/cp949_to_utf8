@@ -5,8 +5,8 @@
 extern  "C" {
 #endif
 
-unsigned    cp949_to_utf8_len( const char* _str );
-char*       cp949_to_utf8( char* dest_str, const char* _str );
+unsigned    cp949_to_utf8_len( const char* src_str );
+char*       cp949_to_utf8( char* dst_str, const char* src_str );
 
 #ifdef  __cplusplus
 }
